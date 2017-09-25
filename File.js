@@ -7,13 +7,13 @@
 		create:function(){
 			if(!this.file.getParent().exists())
 				this.file.getParent().mkdirs();
-			new java.io.File(this.path).createNewFile();
+			this.file.createNewFile();
 		},
 		delete:function(){
-			new java.io.File(this.path).delete();
+			this.file.delete();
 		},
 		exist:function(){
-			return new java.io.File(this.path).exists();
+			return this.file.exists();
 		},
 		read:function(){
 			return android.os.FileUtils.readTextFile(this.file,0,null);
